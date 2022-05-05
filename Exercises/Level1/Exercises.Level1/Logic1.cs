@@ -101,7 +101,27 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+
+        int isbirthday = 0;
+        if (isBirthday)
+        {
+            isbirthday = 5;
+        }
+
+        if (speed > 80 + isbirthday)
+        {
+            return 2;
+        }
+        
+        else if (speed > 60 + isbirthday)
+        {
+            return 1;
+        }
+       
+        else
+        {
+            return 0;
+        }
     }
 
     /// <summary>
@@ -114,7 +134,20 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+
+        if (sum >= 10 && sum <= 19)
+        {
+            return 20;
+        }
+
+        else 
+        {
+            return sum;
+        }
+           
+       
+
     }
 
     /// <summary>
@@ -130,8 +163,31 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+
+        if (vacation)
+        {
+            if (day == 0 || day == 6)
+            {
+                return "off";
+            }
+
+            else
+            {
+                return "10:00";
+            }
+             
+        }
+
+        if (day == 0 || day == 6) 
+        {
+            return "10:00";
+        }
+          
+
+        return "7:00";
     }
+      
+    
 
     /// <summary>
     /// The number 6 is a truly great number. Given two int values, a and b, return true if either
