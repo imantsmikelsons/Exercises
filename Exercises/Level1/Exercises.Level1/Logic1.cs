@@ -214,8 +214,22 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+        if (outsideMode)
+        {
+            if (n <= 1 || n >= 10) return true;
+
+            else return false;
+        }
+        else
+        {
+            if (n >= 1 && n <= 10) return true;
+
+            else return false;
+        }
     }
+
+         
+   
 
     /// <summary>
     /// We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of
@@ -449,8 +463,44 @@ public class Logic1
     /// </summary>
     public int MaxMod5(int a, int b)
     {
+      
+        if (a == b) 
+        {
+            return 0;
+        }
+
+        if (a % 5 == b % 5)
+        {
+            return Math.Min(a, b);
+        }
+
+       return MathMax(a,b);
+        
+        
+    }
+
+    private int MathMax(int a, int b)
+    {
         throw new NotImplementedException();
     }
+
+    //public int MaxMod5(int a, int b)
+    //{
+    //    // 1. Ja vērtības ir vienādas tad atgriez 0
+    //    if (a == b)
+    //    {
+    //        return 0;
+    //    }
+
+    //    // 2. Ja dalot ar 5 ir tāds pats atlikums tad atgriežam mazāko vērtību
+    //    if (a % 5 == b % 5)
+    //    {
+    //        return Math.Min(a, b);
+    //    }
+
+    //    //3. Citādi Atgriežam lielāko vērtību
+    //    return Math.Max(a, b);
+    //}
 
     /// <summary>
     /// You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. If they
