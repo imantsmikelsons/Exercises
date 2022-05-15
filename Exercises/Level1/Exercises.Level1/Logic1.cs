@@ -463,7 +463,6 @@ public class Logic1
     /// </summary>
     public int MaxMod5(int a, int b)
     {
-      
         if (a == b) 
         {
             return 0;
@@ -471,36 +470,11 @@ public class Logic1
 
         if (a % 5 == b % 5)
         {
-            return Math.Min(a, b);
+            return Math.Min(a,b);
         }
 
-       return MathMax(a,b);
-        
-        
+       return Math.Max(a,b);
     }
-
-    private int MathMax(int a, int b)
-    {
-        throw new NotImplementedException();
-    }
-
-    //public int MaxMod5(int a, int b)
-    //{
-    //    // 1. Ja vērtības ir vienādas tad atgriez 0
-    //    if (a == b)
-    //    {
-    //        return 0;
-    //    }
-
-    //    // 2. Ja dalot ar 5 ir tāds pats atlikums tad atgriežam mazāko vērtību
-    //    if (a % 5 == b % 5)
-    //    {
-    //        return Math.Min(a, b);
-    //    }
-
-    //    //3. Citādi Atgriežam lielāko vērtību
-    //    return Math.Max(a, b);
-    //}
 
     /// <summary>
     /// You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. If they

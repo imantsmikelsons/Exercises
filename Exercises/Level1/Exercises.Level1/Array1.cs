@@ -142,13 +142,14 @@ public class Array1
     /// Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2,
     /// 3} yields {2, 3, 1}.
     /// 
+    /// Ņemot vērā intu garumu 3, atgrieziet masīvu ar elementiem "pagriezts pa kreisi", lai {1, 2,3}iegūtu {2, 3, 1}.
     /// reverse3([1, 2, 3]) → [3, 2, 1]
     /// reverse3([5, 11, 9]) → [9, 11, 5]
     /// reverse3([7, 0, 0]) → [0, 0, 7]
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        return new int[] { nums[2], nums[1], nums[0] };
     }
 
     /// <summary>
@@ -161,7 +162,16 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] maxVal = new int[3];
+        maxVal[0] = nums[0];
+
+        if (nums[2] >= maxVal[0]) 
+       
+            maxVal[0] = nums[2];
+            maxVal[1] = maxVal[0];
+            maxVal[2] = maxVal[0];
+
+        return maxVal;
     }
 
     /// <summary>
@@ -175,7 +185,15 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+
+        // Ņemot vērā intu masīvu, atgrieziet masīva pirmo 2 elementu summu.
+        // Ja masīva garums ir mazāks par 2, vienkārši summējiet esošos elementus, atgriežot 0, ja masīvs ir garāks 0.
+
+        if (nums.Length >= 2)
+            return (nums[0] + nums[1]);
+        if (nums.Length == 1)
+            return nums[0];
+        return 0;
     }
 
     /// <summary>
@@ -188,7 +206,12 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        //Ņemot vērā 2 int masīvus, a un b, katrs garums 3,
+        //atgriež jaunu masīva garumu 2, kurā ir to vidējie elementi.
+
+        int[] mid = { a[1], b[1] };
+
+        return mid;
     }
 
     /// <summary>
