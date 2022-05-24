@@ -162,6 +162,7 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
+        /*
         int[] maxVal = new int[3];
         maxVal[0] = nums[0];
 
@@ -172,6 +173,23 @@ public class Array1
             maxVal[2] = maxVal[0];
 
         return maxVal;
+        */
+        
+          int element = 0;
+        int[] result = new int[nums.Length];
+        if (nums[0] > nums[nums.Length - 1])
+        {
+            element = nums[0];
+        }else
+        {
+            element = nums[nums.Length - 1];
+        }
+        for(int i = 0; i < nums.Length; i++)
+        {
+            result[i] = element;
+        }
+        return result;
+         
     }
 
     /// <summary>
@@ -200,7 +218,7 @@ public class Array1
     /// Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their
     /// middle elements.
     /// 
-    /// middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
+    /// middleWay([1, 2, 3,], [4, 5, 6,]) → [2, 5]
     /// middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
     /// middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
     /// </summary>
@@ -208,7 +226,7 @@ public class Array1
     {
         //Ņemot vērā 2 int masīvus, a un b, katrs garums 3,
         //atgriež jaunu masīva garumu 2, kurā ir to vidējie elementi.
-
+        
         int[] mid = { a[1], b[1] };
 
         return mid;
@@ -222,9 +240,17 @@ public class Array1
     /// makeEnds([1, 2, 3, 4]) → [1, 4]
     /// makeEnds([7, 4, 6, 2]) → [7, 2]
     /// </summary>
+    /// Ņemot vērā intu masīvu, atgrieziet jaunu masīva garumu 2, kas satur pirmo un pēdējo elementu
+    //no sākotnējā masīva.Sākotnējais masīvs būs garums 1 vai vairāk.
     public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+       
+       int[] arr = new int[2];
+        arr[0] = nums[0];
+        arr[1] = nums[nums.Length - 1];
+        return arr;
+
+        return new int[]  { nums[0], nums[nums.Length -1] };
     }
 
     /// <summary>

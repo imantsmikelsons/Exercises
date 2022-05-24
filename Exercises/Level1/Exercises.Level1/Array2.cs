@@ -17,7 +17,15 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
-        throw new NotImplementedException();
+        int result = 0;
+        for (int i = 0; i < nums.Length; i++) 
+        {
+            if (nums[i] % 2 == 0)
+            {
+                result++;
+            }
+        }
+        return result;
     }
 
     /// <summary>
@@ -31,8 +39,21 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
-        throw new NotImplementedException();
+        int max = nums[0];
+        int min = nums[0];
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            if (nums[i] > max)
+                max = nums[i];
+            else if (nums[i] < min)
+                min = nums[i];
+        }
+       
+        return (max - min);
     }
+
+
 
     /// <summary>
     /// Return the "centered" average of an array of ints, which we'll say is the mean average of
@@ -47,7 +68,19 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
-        throw new NotImplementedException();
+        int max = nums[0];
+        int min = nums[0];
+        int sum = nums[0];
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            sum += nums[i];
+            if (nums[i] > max)
+                max = nums[i];
+            else if (nums[i] < min)
+                min = nums[i];
+        }
+        return (sum - max - min) / (nums.Length - 2);
     }
 
     /// <summary>
@@ -61,7 +94,15 @@ public class Array2
     /// </summary>
     public int Sum13(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 13)
+                i++;
+            else
+                sum += nums[i];
+        }
+        return sum;
     }
 
     /// <summary>
