@@ -7,6 +7,8 @@ namespace Exercises.Level1;
 /// </summary>
 public class Array2
 {
+    private bool result;
+
     /// <summary>
     ///  Return the number of even ints in the given array. Note: the % "mod" operator computes
     ///  the remainder, e.g. 5 % 2 is 1.
@@ -116,7 +118,25 @@ public class Array2
     /// </summary>
     public int Sum67(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int n = nums[i];
+            if (n == 6)
+            {
+                i++;
+                while (i < nums.Length && nums[i] != 7)
+                {
+                    i++;
+                }
+            }
+            else
+            {
+                sum += n;
+            }
+        }
+        return sum;
+
     }
 
     /// <summary>
@@ -128,7 +148,17 @@ public class Array2
     /// </summary>
     public bool Has22(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            int n1 = nums[i];
+            int n2 = nums[i + 1];
+            if (n1 == 2 && n2 == 2)
+            {
+                return true;
+            }
+        }
+        return false;
+
     }
 
     /// <summary>
@@ -140,7 +170,15 @@ public class Array2
     /// </summary>
     public bool Lucky13(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length; i++)
+        {
+          
+            if (nums[i] == 1 || nums[i] == 3)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     /// <summary>

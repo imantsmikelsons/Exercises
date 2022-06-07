@@ -9,6 +9,9 @@ namespace Exercises.Level1;
 /// </summary>
 public class Array1
 {
+    private int twoCount;
+    private int threeCount;
+
     /// <summary>
     /// Given an array of ints, return true if 6 appears as either the first or last element in the
     /// array. The array will be length 1 or more.
@@ -107,10 +110,10 @@ public class Array1
         int sum = 0;
         for (int i = 0; i < nums.Length; i++)
         {
-            sum +=  nums[i];
+            sum += nums[i];
         }
         return sum;
-        
+
     }
 
 
@@ -135,7 +138,7 @@ public class Array1
 
         //Īsais pieraksts
         return new int[] { nums[1], nums[2], nums[0] };
-        
+
     }
 
     /// <summary>
@@ -174,22 +177,23 @@ public class Array1
 
         return maxVal;
         */
-        
-          int element = 0;
+
+        int element = 0;
         int[] result = new int[nums.Length];
         if (nums[0] > nums[nums.Length - 1])
         {
             element = nums[0];
-        }else
+        }
+        else
         {
             element = nums[nums.Length - 1];
         }
-        for(int i = 0; i < nums.Length; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
             result[i] = element;
         }
         return result;
-         
+
     }
 
     /// <summary>
@@ -226,7 +230,7 @@ public class Array1
     {
         //Ņemot vērā 2 int masīvus, a un b, katrs garums 3,
         //atgriež jaunu masīva garumu 2, kurā ir to vidējie elementi.
-        
+
         int[] mid = { a[1], b[1] };
 
         return mid;
@@ -244,13 +248,13 @@ public class Array1
     //no sākotnējā masīva.Sākotnējais masīvs būs garums 1 vai vairāk.
     public int[] MakeEnds(int[] nums)
     {
-       
-       int[] arr = new int[2];
+
+        int[] arr = new int[2];
         arr[0] = nums[0];
         arr[1] = nums[nums.Length - 1];
         return arr;
 
-        return new int[]  { nums[0], nums[nums.Length -1] };
+        return new int[] { nums[0], nums[nums.Length - 1] };
     }
 
     /// <summary>
@@ -262,7 +266,21 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+        //Ja int masīva garums ir 2, atgrieziet patieso vērtību, ja tajā ir 2 vai 3.
+
+        for (int i = 0; i < nums.Length ; i++)
+        {
+
+            if (nums[i] == 2 || nums[i] == 3)
+            {
+                return true;
+            }
+            
+        }
+            return false;
+
+
+
     }
 
     /// <summary>
@@ -274,7 +292,19 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
-        throw new NotImplementedException();
+        //Ja int masīva garums ir 2, atgrieziet patieso vērtību, ja tajā nav 2 vai 3.
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+
+            if (nums[i] == 2|| nums[i] == 3)
+            {
+                return false;
+            }
+
+        }
+             return true;
+
     }
 
     /// <summary>
@@ -301,8 +331,27 @@ public class Array1
     /// </summary>
     public bool Double23(int[] nums)
     {
-        throw new NotImplementedException();
-    }
+        //Ņemot vērā int masīvu, atgriež true, ja masīvā ir 2 divreiz vai 3 divreiz. Masīva garums būs 0, 1 vai 2.
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums.Length < 2) 
+            {
+                return false;
+            }
+               
+
+            if ((nums[0] == 2 && nums[1] == 2) || (nums[0] == 3 && nums[1] == 3)) 
+            {
+                return true;
+            }
+              
+            else
+                return false;
+        }
+        return false;
+    }      
+    
 
     /// <summary>
     /// Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the
